@@ -95,6 +95,12 @@ public class PizzaOrder extends javax.swing.JFrame {
         crustButtonGroup.add(thinRadioButton);
         gridConstraints.anchor = GridBagConstraints.WEST;
         crustPanel.add(thinRadioButton, gridConstraints);
+        thinRadioButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                crustRadioButtonActionPerformed(e);
+            } 
+
+        });
         
         thickRadioButton.setText("Thick");
         gridConstraints.gridx = 0;
@@ -102,6 +108,12 @@ public class PizzaOrder extends javax.swing.JFrame {
         gridConstraints.anchor = GridBagConstraints.WEST;
         crustButtonGroup.add(thickRadioButton);
         crustPanel.add(thickRadioButton, gridConstraints);
+        thickRadioButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                crustRadioButtonActionPerformed(e);
+            } 
+
+        });
         
         // add crust panel to the frame
         gridConstraints.gridx = 0;
@@ -120,6 +132,9 @@ public class PizzaOrder extends javax.swing.JFrame {
     
     private void sizeRadioButtonActionPerformed(ActionEvent e) {
             }
+    
+    private void crustRadioButtonActionPerformed(ActionEvent e){
+    }
     
     private void exitForm(WindowEvent e){
     System.exit(0);

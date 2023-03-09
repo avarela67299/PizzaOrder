@@ -11,6 +11,13 @@ public class PizzaOrder extends javax.swing.JFrame {
     JRadioButton smallRadioButton = new JRadioButton(); 
     JRadioButton mediumRadioButton = new JRadioButton(); 
     JRadioButton largeRadioButton = new JRadioButton();
+    
+    //crust panel
+    JPanel crustPanel = new JPanel();
+    ButtonGroup crustButtonGroup = new ButtonGroup();
+    JRadioButton thinRadioButton = new JRadioButton();
+    JRadioButton thickRadioButton = new JRadioButton();
+    
 
     public static void main(String[] args) {
         new PizzaOrder().show();
@@ -71,13 +78,14 @@ public class PizzaOrder extends javax.swing.JFrame {
             } 
         });
         
+        //add the pannel to the frame
         gridConstraints.gridx = 0;
         gridConstraints.gridy = 0;
         getContentPane().add(sizePanel, gridConstraints);
         
         pack();
         
-        //place the program i the middle of the screen
+        //place the program in the middle of the screen
         Dimension screenSize =
         Toolkit.getDefaultToolkit().getScreenSize();
         setBounds((int) (0.5 * (screenSize.width -

@@ -11,6 +11,13 @@ public class PizzaOrder extends javax.swing.JFrame {
     JRadioButton smallRadioButton = new JRadioButton(); 
     JRadioButton mediumRadioButton = new JRadioButton(); 
     JRadioButton largeRadioButton = new JRadioButton();
+    
+    //crust panel
+    JPanel crustPanel = new JPanel();
+    ButtonGroup crustButtonGroup = new ButtonGroup();
+    JRadioButton thinRadioButton = new JRadioButton();
+    JRadioButton thickRadioButton = new JRadioButton();
+    
 
     public static void main(String[] args) {
         new PizzaOrder().show();
@@ -71,13 +78,38 @@ public class PizzaOrder extends javax.swing.JFrame {
             } 
         });
         
+        //add the size pannel to the frame
         gridConstraints.gridx = 0;
         gridConstraints.gridy = 0;
         getContentPane().add(sizePanel, gridConstraints);
         
+        // crust panel layout
+        crustPanel.setLayout(new GridBagLayout());
+        crustPanel.setBorder(BorderFactory.createTitledBorder("Crust"));
+        
+        // add controls to panel
+        thinRadioButton.setText("Thin");
+        thinRadioButton.setSelected(true);
+        gridConstraints.gridx = 0;
+        gridConstraints.gridy = 0;
+        crustButtonGroup.add(thinRadioButton);
+        gridConstraints.anchor = GridBagConstraints.WEST;
+        crustPanel.add(thinRadioButton, gridConstraints);
+        
+        thickRadioButton.setText("Thick");
+        gridConstraints.gridx = 0;
+        gridConstraints.gridy = 1;
+        gridConstraints.anchor = GridBagConstraints.WEST;
+        crustButtonGroup.add(thickRadioButton);
+        crustPanel.add(thickRadioButton, gridConstraints);
+        
+        // add crust panel to the frame
+        gridConstraints.gridx = 0;
+        gridConstraints.gridy = 1;
+        getContentPane().add(crustPanel,gridConstraints);
         pack();
         
-        //place the program i the middle of the screen
+        //place the program in the middle of the screen
         Dimension screenSize =
         Toolkit.getDefaultToolkit().getScreenSize();
         setBounds((int) (0.5 * (screenSize.width -
